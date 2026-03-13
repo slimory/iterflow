@@ -86,8 +86,18 @@ For a new project that doesn't yet have the iterflow doc structure:
    - `docs/CONTRIBUTING.md` — standard contribution rules and task workflow
    - `docs/CHANGELOG.md` — initialized with `[Unreleased]` section
    - `docs/iterations/README.md` — iteration management hub
-3. Optionally create the first iteration with `/iterflow new`
-4. Update root `README.md` with documentation map pointing to all docs
+3. **Handle CLAUDE.md**:
+   - Check if `CLAUDE.md` exists in the project root
+   - **If it doesn't exist**: Copy [CLAUDE.md.template](references/CLAUDE.md.template) to project root as `CLAUDE.md`, then fill in the placeholders:
+     - `{{PROJECT_NAME}}` → project name
+     - `{{PROJECT_DESCRIPTION}}` → project description
+     - `{{TECH_STACK}}` → tech stack (e.g., "Electron + React + TypeScript + Vite")
+     - `{{LAST_UPDATED}}` → today's date (YYYY-MM-DD)
+   - **If it already exists**: Ask the user: "CLAUDE.md already exists. Do you want to overwrite it with the iterflow template, or keep the existing one?"
+     - If user chooses overwrite: copy template, fill placeholders
+     - If user keeps existing: proceed without modifying CLAUDE.md
+4. Optionally create the first iteration with `/iterflow new`
+5. Update root `README.md` with documentation map pointing to all docs
 
 ## Key Principles
 
